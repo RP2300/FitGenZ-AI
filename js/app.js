@@ -265,6 +265,30 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// ======================== Fitness Methods Toggle ========================
+
+/**
+ * Setup method card toggle functionality
+ */
+function setupMethodCardToggles() {
+    const methodToggles = document.querySelectorAll('.method-toggle');
+    
+    methodToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const methodCard = toggle.closest('.method-card');
+            const methodContent = methodCard.querySelector('.method-content');
+            
+            // Toggle active class
+            methodContent.classList.toggle('active');
+            toggle.classList.toggle('active');
+            
+            // Update button text
+            const isActive = methodContent.classList.contains('active');
+            toggle.textContent = isActive ? 'Show Less ▲' : 'Learn More ▼';
+        });
+    });
+}
+
 // ======================== Form Handling ========================
 
 /**
@@ -469,6 +493,9 @@ document.body.prepend(skipLink);
  */
 function initApp() {
     console.log('🚀 FitGenZ AI App Initialized');
+    
+    // Setup method card toggles
+    setupMethodCardToggles();
     
     // Check if user has previous data
     const savedData = localStorage.getItem('fitgenzia_userData');
