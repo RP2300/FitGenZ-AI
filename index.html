@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FitGenZ AI - Personalized fitness guidance for teenagers aged 13-19. AI-powered workout plans, meal suggestions, and motivation.">
+    <meta name="theme-color" content="#00BCD4">
+    <title>FitGenZ AI - Your Personal Fitness Coach</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>FitGenZ AI</h1>
+                <p class="tagline">Your Personal Fitness Coach</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#quiz" class="nav-link">Get Started</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Build Your Best Self in 2025</h2>
+            <p class="hero-subtitle">Get personalized workout and meal plans designed just for you. No confusion. No overwhelm. Just results.</p>
+            <button class="btn btn-primary btn-large" id="ctaBtn">Start Your Journey</button>
+            <p class="hero-trust">✨ Trusted by 1000+ teens | AI-Powered | Safe for Your Age</p>
+        </div>
+        <div class="hero-image">
+            <div class="placeholder-image">🏋️</div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why FitGenZ AI?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Plans</h3>
+                    <p>Get customized workout routines and meal plans based on your age, fitness level, and goals.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Guidance</h3>
+                    <p>Intelligent recommendations that adapt to your progress and keep you motivated.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3>School Schedule Friendly</h3>
+                    <p>Plans that fit around your school, homework, and social life.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍎</div>
+                    <h3>Easy Meal Plans</h3>
+                    <p>Simple, tasty meal suggestions using foods you actually like.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Safe Workouts</h3>
+                    <p>Age-appropriate exercises designed for teen development and injury prevention.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Track Progress</h3>
+                    <p>Visualize your improvements and celebrate milestones with detailed analytics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz/Assessment Section -->
+    <section id="quiz" class="quiz-section">
+        <div class="container">
+            <h2>Quick Assessment</h2>
+            <p class="section-subtitle">Let's find your perfect fitness plan in just 2 minutes</p>
+            
+            <form id="assessmentForm" class="assessment-form">
+                <div class="form-group">
+                    <label for="age">What's your age?</label>
+                    <input type="number" id="age" name="age" min="13" max="19" required placeholder="e.g., 16">
+                </div>
+
+                <div class="form-group">
+                    <label for="fitnessLevel">Current fitness level?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="fitnessLevel" value="beginner" required>
+                            <span>Beginner (Just starting)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="fitnessLevel" value="intermediate">
+                            <span>Intermediate (Some experience)</span>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="fitnessLevel" value="advanced">
+                            <span>Advanced (Regular exerciser)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="goal">What's your main goal?</label>
+                    <select id="goal" name="goal" required>
+                        <option value="">Select a goal...</option>
+                        <option value="lose-weight">Lose weight</option>
+                        <option value="gain-muscle">Build muscle</option>
+                        <option value="general-health">Improve general health</option>
+                        <option value="sports-performance">Improve sports performance</option>
+                        <option value="confidence">Build confidence</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="time">How much time can you commit per week?</label>
+                    <select id="time" name="time" required>
+                        <option value="">Select time availability...</option>
+                        <option value="30min">30 minutes or less</option>
+                        <option value="30-60min">30-60 minutes</option>
+                        <option value="60-90min">60-90 minutes</option>
+                        <option value="90plus">90+ minutes</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-large">Generate My Plan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Results Section (Initially Hidden) -->
+    <section id="results" class="results-section hidden">
+        <div class="container">
+            <h2 id="resultsTitle">Your Personalized Plan</h2>
+            <div id="resultsContent" class="results-content">
+                <!-- Generated content will go here -->
+            </div>
+            <button class="btn btn-secondary" id="restartBtn">Start Over</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About FitGenZ AI</h2>
+            <div class="about-content">
+                <p>We understand the struggle. Too much conflicting fitness advice online. Workouts that aren't safe for your age. Meal plans that seem impossible to follow.</p>
+                <p>That's why we built FitGenZ AI—a platform that combines expert fitness knowledge with AI smarts to give you guidance that's simple, safe, and actually works for your life.</p>
+                <p><strong>Our Mission:</strong> Help teenagers build strong, healthy habits that last a lifetime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 FitGenZ AI. Built with ❤️ for teens.</p>
+            <p class="disclaimer">⚠️ Always consult with a doctor before starting a new fitness routine.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

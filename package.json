@@ -1,0 +1,24 @@
+{
+  "name": "fitgenzia",
+  "version": "1.0.0",
+  "description": "AI-powered fitness guidance platform for teenagers aged 13-19",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "test": "echo \"No tests yet\" && exit 0",
+    "lint": "eslint js/ --fix"
+  },
+  "keywords": [
+    "fitness",
+    "teens",
+    "ai",
+    "personalized",
+    "health",
+    "wellness"
+  ],
+  "author": "FitGenZ Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
