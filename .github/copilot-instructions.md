@@ -97,6 +97,41 @@ localStorage (user data persistence)
 | `generatePersonalizedPlan()` | Creates HTML from plan data | Uses template literals |
 | `handleFormSubmit()` | Processes assessment | Validates age (13-19), stores in localStorage |
 | `debounce()` | Performance optimization | Prevents scroll thrashing |
+| `setupMethodCardToggles()` | Initialize fitness method cards | Adds click handlers for expand/collapse |
+
+### Fitness Methods Educational Section
+
+The "Explore Your Fitness Options" section teaches users about 6 different fitness approaches:
+
+**Method Cards (in `.methods-grid`):**
+1. **Gym-Based Workouts** - Equipment-based training, progressive overload
+2. **Running & Cardio** - Aerobic exercise, mental health benefits
+3. **Home Workouts** - Bodyweight exercises, no-cost fitness
+4. **Sports-Based** - Team activities, skill development (basketball, badminton, football)
+5. **Outdoor Activities** - Nature-based fitness (hiking, cycling, trekking)
+6. **Water-Based** - Low-impact full-body (swimming, water aerobics)
+
+**Card Structure:**
+```html
+<div class="method-card">
+  <div class="method-icon">🏋️</div>
+  <h3>Method Name</h3>
+  <div class="method-content">
+    <!-- Collapsible details -->
+  </div>
+  <button class="method-toggle">Learn More ▼</button>
+</div>
+```
+
+**CSS Classes:**
+- `.method-card` - Individual card container
+- `.method-content` - Collapsible section (hidden by default)
+- `.method-content.active` - Shown state
+- `.method-toggle` - Expand/collapse button
+
+**JavaScript:**
+- `setupMethodCardToggles()` - Called in `initApp()` to attach click handlers
+- Toggles `.active` class on content and button text changes to "Show Less ▲"
 
 ### Important Patterns
 
@@ -145,6 +180,33 @@ const result = condition ? trueVal : falseVal;
 
 3. Test by selecting form options that map to that plan
 
+### Adding a New Fitness Method
+
+1. Add new method card to `.methods-grid` in `index.html`:
+   ```html
+   <div class="method-card">
+     <div class="method-icon">🧗</div>
+     <h3>Rock Climbing</h3>
+     <div class="method-content">
+       <p><strong>What it is:</strong>Description...</p>
+       <h4>How to get fit:</h4>
+       <ul>
+         <li>Benefit 1</li>
+         <li>Benefit 2</li>
+       </ul>
+       <h4>Benefits for teens:</h4>
+       <ul>
+         <li>Teen benefit 1</li>
+         <li>Teen benefit 2</li>
+       </ul>
+     </div>
+     <button class="method-toggle" data-method="climbing">Learn More ▼</button>
+   </div>
+   ```
+
+2. CSS is auto-applied via `.method-card` and `.method-toggle` classes
+3. JavaScript auto-binds toggle handlers via `setupMethodCardToggles()`
+
 ### Modifying the Quiz/Assessment
 
 1. Add new field to `index.html` form
@@ -164,6 +226,7 @@ const result = condition ? trueVal : falseVal;
 - Hamburger menu uses `navMenu.classList.toggle('active')`
 - Ensure `z-index: 1000` on navbar for overlay
 - Test with real mobile devices or DevTools device emulation
+- Method cards collapse to single column at 768px and below
 
 ---
 
